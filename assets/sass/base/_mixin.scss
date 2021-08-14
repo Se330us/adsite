@@ -1,0 +1,82 @@
+
+@mixin clearfix() {
+  &::after {
+    display: block;
+    content: "";
+    clear: both;
+  }
+}
+
+
+@mixin absolute-center{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin bg-cover{
+    background : {
+        color: $color-primary;
+        size: cover;
+        position: center;
+        repeat: no-repeat;
+    }
+}
+
+
+@mixin object-fit-img{
+    object-fit: cover;
+    width: 100%;
+}
+
+@mixin arrow__nav{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+@mixin border-around{
+   border: 1px solid $color-gray-1;
+   border-radius:3px;
+}
+
+@mixin breakpoint($point) {
+
+    @if $point == xsmall {
+        @media (min-width: 360px) { 
+            @content ; 
+        }
+    }
+
+    @if $point == small {
+        @media (min-width: 576px) { 
+            @content ; 
+        }
+    }
+
+    @if $point == medium {
+        @media (min-width: 768px) { 
+            @content ; 
+        }
+    }
+
+    @if $point == large {
+        @media (min-width: 992px) { 
+            @content ; 
+        }
+    }
+
+    @if $point == xlarge {
+        @media (min-width: 1200px) { 
+            @content ; 
+        }
+    }
+
+    @if $point == xxlarge {
+        @media (min-width: 1400px) { 
+            @content ; 
+        }
+    }
+
+}
+
